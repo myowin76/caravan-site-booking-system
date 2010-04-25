@@ -1,0 +1,23 @@
+<% title "Owner Charges" %>
+
+<table>
+  <tr>
+    <th>Owner</th>
+    <th>Charge</th>
+    <th>For Year</th>
+    <th>Description</th>
+  </tr>
+  <% for owner_charge in @owner_charges %>
+    <tr>
+      <td><%=h owner_charge.owner_id %></td>
+      <td><%=h owner_charge.charge_id %></td>
+      <td><%=h owner_charge.for_year %></td>
+      <td><%=h owner_charge.description %></td>
+      <td><%= link_to "Show", owner_charge %></td>
+      <td><%= link_to "Edit", edit_owner_charge_path(owner_charge) %></td>
+      <td><%= link_to "Destroy", owner_charge, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Owner Charge", new_owner_charge_path %></p>

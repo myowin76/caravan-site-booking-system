@@ -1,0 +1,35 @@
+<% form_tag @customer, :method => 'get' do %>
+			<%= text_field_tag :search, params[:search] %>
+			<%= submit_tag 'Search', :name => nil %> </p>
+<% end %>
+<% title "Customers" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>Phone</th>
+    <th>Email</th>
+  </tr>
+  <% for customer in @customers %>
+    <tr>
+      <td><%=h customer.title %></td>
+      <td><%=h customer.firstname %></td>
+      <td><%=h customer.lastname %></td>
+      <td><%=h customer.address1 %></td>
+      <td><%=h customer.address2 %></td>
+      <td><%=h customer.phone %></td>
+      <td><%=h customer.email %></td>
+	  <%#= hidden_field :customer_id, :value => customer.id %>
+      <td><%= link_to "Show", customer %></td>
+      <td><%= link_to "Edit", edit_customer_path(customer) %></td>
+	  <td><%= button_to "Reserve", caravans_path, :method => 'get', :id => customer.id %></td>
+      <td><%= link_to "Destroy", customer, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Customer", new_customer_path %></p>

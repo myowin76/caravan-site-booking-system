@@ -1,0 +1,16 @@
+<% title "Caravan Type" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @caravan_type.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%=h @caravan_type.description %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_caravan_type_path(@caravan_type) %> |
+  <%= link_to "Destroy", @caravan_type, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", caravan_types_path %>
+</p>

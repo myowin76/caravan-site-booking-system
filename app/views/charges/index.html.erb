@@ -1,0 +1,21 @@
+<% title "Charges" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Unit</th>
+  </tr>
+  <% for charge in @charges %>
+    <tr>
+      <td><%=h charge.name %></td>
+      <td><%=h charge.price %></td>
+      <td><%=h charge.unit %></td>
+      <td><%= link_to "Show", charge %></td>
+      <td><%= link_to "Edit", edit_charge_path(charge) %></td>
+      <td><%= link_to "Destroy", charge, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Charge", new_charge_path %></p>

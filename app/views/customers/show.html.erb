@@ -1,0 +1,37 @@
+<% title "Customer" %>
+
+<p>
+  <strong>Title:</strong>
+  <%=h @customer.title %>
+</p>
+<p>
+  <strong>Firstname:</strong>
+  <%=h @customer.firstname %>
+</p>
+<p>
+  <strong>Lastname:</strong>
+  <%=h @customer.lastname %>
+</p>
+<p>
+  <strong>Address1:</strong>
+  <%=h @customer.address1 %>
+</p>
+<p>
+  <strong>Address2:</strong>
+  <%=h @customer.address2 %>
+</p>
+<p>
+  <strong>Phone:</strong>
+  <%=h @customer.phone %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%=h @customer.email %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_customer_path(@customer) %> |
+  <%= link_to "Destroy", @customer, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Proceed Booking", new_customer_caravan_customer_path(@customer) %>
+  <%= link_to "View All", customers_path %>
+</p>

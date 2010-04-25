@@ -1,0 +1,28 @@
+<% title "Caravans" %>
+
+<table>
+	<tr>
+		<th>Pitch No</th>
+		<% Date.today.cweek.upto (Date.today.cweek+10) do |n|%>
+		<th>Week <%= n %> </th>
+		<% end %>
+	</tr>
+	
+	<% for caravan in @caravans %>
+		
+		<tr>
+			<td><%=h caravan.pitch_no %><br/><%=h caravan.caravan_type.name %></td>
+			<% Date.today.cweek.upto(Date.today.cweek+10) do |week_no|%>
+				<% if !caravan.caravan_customers.nil? %>
+				<td><%= link_to "Avail", new_caravan_caravan_customer_path(caravan, :week_no => week_no)  %></td>
+				<% else %>
+				<td><%= link_to caravan.caravan_customers, new_caravan_caravan_customer_path(caravan, :week_no => week_no)  %></td>
+				<% end %>
+			<% end %>
+			
+			
+		</tr>
+	<% end %>
+</table>
+
+<p><%= link_to "New Caravan", new_caravan_path %></p>

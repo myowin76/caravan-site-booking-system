@@ -1,0 +1,20 @@
+<% title "Facility" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @facility.name %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%=h @facility.price %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%=h @facility.description %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_facility_path(@facility) %> |
+  <%= link_to "Destroy", @facility, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", facilities_path %>
+</p>

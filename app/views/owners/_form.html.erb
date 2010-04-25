@@ -1,0 +1,36 @@
+<% form_for @owner do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :title, "Title" %><br />
+    <%= f.select :title, title_list %>
+  </p>
+  <p>
+    <%= f.label :firstname %><br />
+    <%= f.text_field :firstname %>
+  </p>
+  <p>
+    <%= f.label :lastname %><br />
+    <%= f.text_field :lastname %>
+  </p>
+  <p>
+    <%= f.label :address1 %><br />
+    <%= f.text_field :address1 %>
+  </p>
+  <p>
+    <%= f.label :address2 %><br />
+    <%= f.text_field :address2 %>
+  </p>
+  <p>
+    <%= f.label :postcode %><br />
+    <%= f.text_field :postcode %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

@@ -1,0 +1,20 @@
+<% title "Charge" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @charge.name %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%=h @charge.price %>
+</p>
+<p>
+  <strong>Unit:</strong>
+  <%=h @charge.unit %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_charge_path(@charge) %> |
+  <%= link_to "Destroy", @charge, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", charges_path %>
+</p>

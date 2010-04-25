@@ -1,0 +1,44 @@
+<% title "Caravan Customer" %>
+
+<p>
+  <strong>Customer:</strong>
+  <%=h @caravan_customer.customer_id %>
+</p>
+<p>
+  <strong>Caravan:</strong>
+  <%=h @caravan_customer.caravan_id %>
+</p>
+<p>
+  <strong>Location:</strong>
+  <%=h @caravan_customer.location_id %>
+</p>
+<p>
+  <strong>No Of Adults:</strong>
+  <%=h @caravan_customer.no_of_adults %>
+</p>
+<p>
+  <strong>No Of Children:</strong>
+  <%=h @caravan_customer.no_of_children %>
+</p>
+<p>
+  <strong>Arrival Date:</strong>
+  <%=h @caravan_customer.arrival_date %>
+</p>
+<p>
+  <strong>Departure Date:</strong>
+  <%=h @caravan_customer.departure_date %>
+</p>
+<p>
+  <strong>Deposit Paid:</strong>
+  <%=h @caravan_customer.deposit_paid %>
+</p>
+<p>
+  <strong>Status:</strong>
+  <%=h @caravan_customer.status %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_caravan_customer_path(@caravan_customer) %> |
+  <%= link_to "Destroy", @caravan_customer, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", caravan_customers_path %>
+</p>

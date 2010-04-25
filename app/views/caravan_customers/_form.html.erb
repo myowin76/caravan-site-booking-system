@@ -1,0 +1,42 @@
+<% form_for [@caravan, @caravan_customer] do |f| %>
+  <%= f.error_messages %>
+  <p>
+	<strong>Caravan Type: </strong> <%= @caravan.caravan_type.name %>
+    Customer Name : <%#= @customer.fullname %>
+  </p>
+    
+  <p>
+    <%= f.label :no_of_adults %><br />
+    <%= f.text_field :no_of_adults %>
+  </p>
+  <p>
+    <%= f.label :no_of_children %><br />
+    <%= f.text_field :no_of_children %>
+  </p>
+  <p>
+    <%= f.label :arrival_date %><br />
+    <%= f.date_select :arrival_date, :order => [:day, :month, :year], :start_year => Time.now.year, :end_year => Time.now.next_year.year  %>
+  </p>
+  <p>
+    <%= f.label :departure_date %><br />
+    <%= f.date_select :departure_date, :order => [:day, :month, :year], :start_year => Time.now.year, :end_year => Time.now.next_year.year  %>
+  </p>
+  <h3>Facilities</h3>
+  
+	<ul>
+	<% @facilities.each do |facility| %>
+		<li>
+			<%= check_box_tag "caravan_facilities_list[]", facility.id, @caravan_customer.caravan_facilities.map{|cf| cf.id}.include?(facility.id) %>
+			<%= facility.name %>
+		</li>
+	<% end %>
+	</ul>
+  
+  
+  <p>
+    <%= f.label "Deposit" %><br />
+    <%= f.text_field :deposit_paid %>
+  </p>
+  
+  <p><%= f.submit "Submit" %></p>
+<% end %>

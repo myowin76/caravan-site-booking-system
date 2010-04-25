@@ -1,0 +1,19 @@
+<% title "Caravan Types" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <% for caravan_type in @caravan_types %>
+    <tr>
+      <td><%=h caravan_type.name %></td>
+      <td><%=h caravan_type.description %></td>
+      <td><%= link_to "Show", caravan_type %></td>
+      <td><%= link_to "Edit", edit_caravan_type_path(caravan_type) %></td>
+      <td><%= link_to "Destroy", caravan_type, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Caravan Type", new_caravan_type_path %></p>

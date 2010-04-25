@@ -1,0 +1,11 @@
+one:
+  caravan_customer_id: 1
+  facility_id: 1
+  qty: 9.99
+  unit: MyString
+
+two:
+  caravan_customer_id: 1
+  facility_id: 1
+  qty: 9.99
+  unit: MyString

@@ -1,0 +1,11 @@
+one:
+  owner_id: 1
+  charge_id: 1
+  for_year: MyString
+  description: MyString
+
+two:
+  owner_id: 1
+  charge_id: 1
+  for_year: MyString
+  description: MyString

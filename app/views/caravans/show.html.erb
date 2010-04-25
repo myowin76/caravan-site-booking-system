@@ -1,0 +1,28 @@
+<% title "Caravan" %>
+
+<p>
+  <strong>Owner:</strong>
+  <%=h @caravan.owner_id %>
+</p>
+<p>
+  <strong>Caravan Type:</strong>
+  <%=h @caravan.caravan_type_id %>
+</p>
+<p>
+  <strong>Pitch No:</strong>
+  <%=h @caravan.pitch_no %>
+</p>
+<p>
+  <strong>Build Date:</strong>
+  <%=h @caravan.build_date %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%=h @caravan.price %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_caravan_path(@caravan) %> |
+  <%= link_to "Destroy", @caravan, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", caravans_path %>
+</p>

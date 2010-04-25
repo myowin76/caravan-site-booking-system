@@ -1,0 +1,40 @@
+<% title "Owner" %>
+
+<p>
+  <strong>Title:</strong>
+  <%=h @owner.title %>
+</p>
+<p>
+  <strong>Firstname:</strong>
+  <%=h @owner.firstname %>
+</p>
+<p>
+  <strong>Lastname:</strong>
+  <%=h @owner.lastname %>
+</p>
+<p>
+  <strong>Address1:</strong>
+  <%=h @owner.address1 %>
+</p>
+<p>
+  <strong>Address2:</strong>
+  <%=h @owner.address2 %>
+</p>
+<p>
+  <strong>Postcode:</strong>
+  <%=h @owner.postcode %>
+</p>
+<p>
+  <strong>Phone:</strong>
+  <%=h @owner.phone %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%=h @owner.email %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_owner_path(@owner) %> |
+  <%= link_to "Destroy", @owner, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", owners_path %>
+</p>

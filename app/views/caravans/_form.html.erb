@@ -1,0 +1,26 @@
+<% form_for @caravan do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :owner_id %><br />
+    <%= f.select :owner_id, Owner.all.collect {|o| [o.fullname, o.id]} %>
+  </p>
+  
+  <p>
+    <%= f.label :caravan_type_id %><br />
+    <%= f.select :caravan_type_id, CaravanType.all.collect{ |ct| [ct.name, ct.id]} %>
+  </p>
+  
+  <p>
+    <%= f.label :pitch_no %><br />
+    <%= f.text_field :pitch_no %>
+  </p>
+  <p>
+    <%= f.label :build_date %><br />
+    <%= f.date_select :build_date %>
+  </p>
+  <p>
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

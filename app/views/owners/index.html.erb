@@ -1,0 +1,31 @@
+<% title "Owners" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>Postcode</th>
+    <th>Phone</th>
+    <th>Email</th>
+  </tr>
+  <% for owner in @owners %>
+    <tr>
+      <td><%=h owner.title %></td>
+      <td><%=h owner.firstname %></td>
+      <td><%=h owner.lastname %></td>
+      <td><%=h owner.address1 %></td>
+      <td><%=h owner.address2 %></td>
+      <td><%=h owner.postcode %></td>
+      <td><%=h owner.phone %></td>
+      <td><%=h owner.email %></td>
+      <td><%= link_to "Show", owner %></td>
+      <td><%= link_to "Edit", edit_owner_path(owner) %></td>
+      <td><%= link_to "Destroy", owner, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Owner", new_owner_path %></p>

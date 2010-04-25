@@ -1,0 +1,24 @@
+<% title "Owner Charge" %>
+
+<p>
+  <strong>Owner:</strong>
+  <%=h @owner_charge.owner_id %>
+</p>
+<p>
+  <strong>Charge:</strong>
+  <%=h @owner_charge.charge_id %>
+</p>
+<p>
+  <strong>For Year:</strong>
+  <%=h @owner_charge.for_year %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%=h @owner_charge.description %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_owner_charge_path(@owner_charge) %> |
+  <%= link_to "Destroy", @owner_charge, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", owner_charges_path %>
+</p>

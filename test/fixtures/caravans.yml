@@ -1,0 +1,13 @@
+one:
+  owner_id: 1
+  caravan_type_id: 1
+  pitch_no: 1
+  build_date: 2010-04-21
+  price: 9.99
+
+two:
+  owner_id: 1
+  caravan_type_id: 1
+  pitch_no: 1
+  build_date: 2010-04-21
+  price: 9.99
