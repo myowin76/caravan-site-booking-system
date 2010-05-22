@@ -1,6 +1,6 @@
-class CreateCaravanFacilities < ActiveRecord::Migration
+class CreateCaravanCustomersFacilities < ActiveRecord::Migration
   def self.up
-    create_table :caravan_facilities do |t|
+    create_table :caravan_customers_facilities do |t|
       t.integer :caravan_customer_id
       t.integer :facility_id
       t.decimal :qty
@@ -10,6 +10,6 @@ class CreateCaravanFacilities < ActiveRecord::Migration
   end
   
   def self.down
-    drop_table :caravan_facilities
+    drop_table :caravan_customers_facilities
   end
 end

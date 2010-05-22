@@ -1,8 +1,12 @@
+Customer ID <%= params[:customer_id]%>
+
 <% form_for [@caravan, @caravan_customer] do |f| %>
   <%= f.error_messages %>
+  
+  <%= f.hidden_field "customer_id", :value => @customer.id %>
   <p>
 	<strong>Caravan Type: </strong> <%= @caravan.caravan_type.name %>
-    Customer Name : <%#= @customer.fullname %>
+    
   </p>
     
   <p>
@@ -26,7 +30,7 @@
 	<ul>
 	<% @facilities.each do |facility| %>
 		<li>
-			<%= check_box_tag "caravan_facilities_list[]", facility.id, @caravan_customer.caravan_facilities.map{|cf| cf.id}.include?(facility.id) %>
+			<%= check_box_tag "caravan_facilities_list[]", facility.id, @caravan_customer.caravan_customers_facilities.map{|cf| cf.id}.include?(facility.id) %>
 			<%= facility.name %>
 		</li>
 	<% end %>

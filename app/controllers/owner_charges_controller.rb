@@ -1,4 +1,6 @@
 class OwnerChargesController < ApplicationController
+	before_filter :login_required
+	layout 'admin'
   def index
     @owner_charges = OwnerCharge.all
   end

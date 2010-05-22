@@ -7,19 +7,46 @@
     <%= yield(:head) %>
   </head>
   <body>
+  
+  
     <div id="container">
-      <%- flash.each do |name, msg| -%>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <%- end -%>
+	<div id="header">
+		<h1>Western Caravan Camp</h1>
+		<h2>Holiday homes, touring vans</h2>
+		
+	</div>	
       
-      <%- if show_title? -%>
-        <h1><%=h yield(:title) %></h1>
-      <%- end -%>
-	  <%= link_to_unless_current('Home',root_url) %>
-	  <%= link_to_unless_current('Bookings',customers_path) %>
-	  <%= %>
-      
-      <%= yield %>
+
+	  <div id="navigation">
+		<ul>
+			<li><%= link_to_unless_current('Home',root_url) %></li>
+			<li><%= link_to_unless_current('Bookings',customers_path) %></li>
+			<li><%= link_to_unless_current('Caravans', :controller => :pages, :action => 'caravans') %></li>
+			<li><%= link_to_unless_current('Facilities', :controller => :pages, :action => 'facilities') %></li>
+			<li><%= link_to_unless_current('Contact us', :controller => :pages, :action => 'contact_us') %></li>
+		</ul>
+	  </div>
+	
+	<div id="content">
+	    <%- if show_title? -%>
+		<h1><%=h yield(:title) %></h1>
+		<%- end -%>
+		<%- flash.each do |name, msg| -%>
+		<%= content_tag :div, msg, :id => "flash_#{name}" %>
+		<%- end -%>
+	
+		<%= yield %>
+	</div>
+
+	<div id="footer">
+		<p>&copy; 2005-2006 <a href="#">Your Name</a> | Design by <a href="http://andreasviklund.com">Andreas 
+		  Viklund</a></p>
+		<p>
+		<!--This theme is free for distriubtion,  so long as  link to openwebdesing.org and florida-villa.com  stay on the theme-->
+		Courtesy  <a href="http://www.openwebdesign.org" target="_blank">Open Web 
+		  Design</a><a href="http://www.dubaiapartments.biz" target="_blank"><img src="spacer.gif" width="5" height="5" border="0"/></a>Thanks 
+		  to <a href="http://www.florida-villa.com" target="_blank">Florida Vacation Homes</a></p>
+	</div>
     </div>
   </body>
 </html>

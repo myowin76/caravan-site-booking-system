@@ -1,20 +1,34 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :caravan_facilities
+  map.resources :caravan_customers_facilities
 
-  map.resources :owner_charges
+  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
+  map.login '/login', :controller => 'sessions', :action => 'new'
+  map.register '/register', :controller => 'admins', :action => 'create'
+  map.signup '/signup', :controller => 'admins', :action => 'new'
+  map.resources :admins
+
+  map.resource :session
+
+  map.admin '/admin', :controller => 'sessions', :action => 'new'
+  map.resources :facilities
+
 
   map.resources :charges
   #map.resources :caravan_customers
-  map.resources :facilities
   #map.resources :customers
   #map.resources :caravans
   map.resources :owners
+  map.resources :owner_charges
 
   
   
   map.resources :caravans, :has_many => :caravan_customers
   map.resources :caravan_types
   map.resources :customers, :has_many => :caravan_customers
+  
+  
+  
+  #map.admins '/dashboard', :controller => 'admins', :action => 'index'
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -48,7 +62,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   # map.root :controller => "welcome"
-  map.root :controller => "pages", :action => "index"
+  map.root :controller => "pages", :action => "home"
 
   # See how all your routes lay out with "rake routes"
 

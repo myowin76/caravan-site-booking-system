@@ -1,0 +1,23 @@
+<% title "Caravan Customers Facilities" %>
+
+<table>
+  <tr>
+    <th>Caravan Customer</th>
+    <th>Facility</th>
+    <th>Qty</th>
+    <th>Unit</th>
+  </tr>
+  <% for caravan_customers_facility in @caravan_customers_facilities %>
+    <tr>
+      <td><%=h caravan_customers_facility.caravan_customer_id %></td>
+      <td><%=h caravan_customers_facility.facility_id %></td>
+      <td><%=h caravan_customers_facility.qty %></td>
+      <td><%=h caravan_customers_facility.unit %></td>
+      <td><%= link_to "Show", caravan_customers_facility %></td>
+      <td><%= link_to "Edit", edit_caravan_customers_facility_path(caravan_customers_facility) %></td>
+      <td><%= link_to "Destroy", caravan_customers_facility, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Caravan Customers Facility", new_caravan_customers_facility_path %></p>

@@ -1,4 +1,6 @@
 class CaravanTypesController < ApplicationController
+  before_filter :login_required
+  layout 'admin'
   def index
     @caravan_types = CaravanType.all
   end

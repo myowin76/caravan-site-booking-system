@@ -1,30 +1,241 @@
-body {
-   background-color: #373B3F;
-  font-family: Verdana, Helvetica, Arial;
-  font-size: 12px;
+/* andreas08 - an open source xhtml/css website layout by Andreas Viklund - http://andreasviklund.com . Free to use in any way and for any purpose as long as the proper credits are given to the original designer. Version: 1.0, November 28, 2005 */
+
+/**************** Body and tag styles ****************/
+
+*{margin:0; padding:0;}
+
+body{
+font:76% Verdana,Tahoma,Arial,sans-serif;
+line-height:1.4em;
+text-align:center;
+color:#303030;
+background:#e8eaec;
 }
 
-a img {
-  border: none;
+a{
+color:#467aa7;
+font-weight:bold;
+text-decoration:none;
+background-color:inherit;
 }
 
-a {
-  color: #0000FF;
+a:hover{color:#2a5a8a; text-decoration:none; background-color:inherit;}
+a img{border:none;}
+
+p{padding:0 0 1.6em 0;}
+p form{margin-top:0; margin-bottom:20px;}
+
+h1{
+font-size: 20px;
+line-height: 20px;
+padding: 0 0 15px 0;
 }
 
-.clear {
-  clear: both;
-  height: 0;
-  overflow: hidden;
+img.left,img.center,img.right{padding:4px; border:1px solid #a0a0a0;}
+img.left{float:left; margin:0 12px 5px 0;}
+img.center{display:block; margin:0 auto 5px auto;}
+img.right{float:right; margin:0 0 5px 12px;}
+
+/**************** Header and navigation styles ****************/
+
+#container{
+width:960px;
+margin:20px auto;
+padding:1px 0;
+text-align:left;
+background:#ffffff;
+color:#303030;
+border:2px solid #a0a0a0;
 }
 
-#container {
-  width: 75%;
-  margin: 0 auto;
-  background-color: #FFF;
-  padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 20px;
+#header{
+height:110px;
+width:958px;
+margin:0 1px 1px 1px;
+background:#467aa7;
+color:#ffffff;
+position: relative;
+}
+
+#header h1{
+padding:35px 0 0 20px;
+font-size:2.4em;
+background-color:inherit;
+color:#ffffff;
+letter-spacing:-2px;
+font-weight:normal;
+position: relative;
+
+}
+
+#header h2{
+margin:10px 0 0 40px;
+font-size:1.4em;
+background-color:inherit;
+color:#f0f2f4;
+letter-spacing:-1px;
+font-weight:normal;
+}
+#login-status{
+position: absolute;
+bottom: 0;
+left: 640px;
+text-align: right;
+padding-right: 10px;
+
+}
+#login-status a{
+color: brown;
+}
+
+#navigation{
+height:2.2em;
+line-height:2.2em;
+width:958px;
+margin:0 1px;
+background:#578bb8;
+color:#ffffff;
+}
+
+#navigation li{
+float:left;
+list-style-type:none;
+border-right:1px solid #ffffff;
+white-space:nowrap;
+}
+
+#navigation li a{
+display:block;
+padding:0 10px;
+font-size:0.8em;
+font-weight:normal;
+text-transform:uppercase;
+text-decoration:none;
+background-color:inherit;
+color: #ffffff;
+}
+
+* html #navigation a {width:1%;}
+
+#navigation .selected,#navigation a:hover{
+background:#80b0da;
+color:#ffffff;
+text-decoration:none;
+}
+
+/**************** Content styles ****************/
+
+#content{
+float:left;
+width:530px;
+font-size:0.9em;
+padding:20px 0 0 20px;
+}
+
+#content h2{
+display:block;
+margin:0 0 16px 0;
+font-size:1.7em;
+font-weight:normal;
+letter-spacing:-1px;
+color:#505050;
+background-color:inherit;
+}
+
+#content h2 a{font-weight:normal;}
+#content h3{margin:0 0 5px 0; font-size:1.4em; letter-spacing:-1px;}
+#content a:hover,#subcontent a:hover{text-decoration:underline;}
+#content ul,#content ol{margin:0 5px 16px 35px;}
+#content dl{margin:0 5px 10px 25px;}
+#content dt{font-weight:bold; margin-bottom:5px;}
+#content dd{margin:0 0 10px 15px;}
+
+/**************** Sidebar styles ****************/
+
+#subcontent{
+float:right;
+width:170px;
+padding:20px 20px 10px 0;
+line-height:1.4em;
+}
+
+#subcontent h2{
+display:block;
+margin:0 0 15px 0;
+font-size:1.6em;
+font-weight:normal;
+text-align:left;
+letter-spacing:-1px;
+color:#505050;
+background-color:inherit;
+}
+
+#subcontent p{margin:0 0 16px 0; font-size:0.9em;}
+
+/**************** Menublock styles ****************/
+
+.menublock{margin:0 0 20px 8px; font-size:0.9em;}
+.menublock li{list-style:none; display:block; padding:2px; margin-bottom:2px;}
+.menublock li a{font-weight:bold; text-decoration:none;}
+.menublock li a:hover{text-decoration:none;}
+.menublock li ul{margin:3px 0 3px 15px; font-size:1em; font-weight:normal;}
+.menublock li ul li{margin-bottom:0;}
+.menublock li ul a{font-weight:normal;}
+
+/**************** Searchbar styles ****************/
+
+#searchbar{margin:0 0 20px 0;}
+#searchbar form fieldset{margin-left:10px; border:0 solid;}
+
+#searchbar #s{
+height:1.2em;
+width:110px;
+margin:0 5px 0 0;
+border:1px solid #a0a0a0;
+}
+
+#searchbar #searchbutton{
+width:auto;
+padding:0 1px;
+border:1px solid #808080;
+font-size:0.9em;
+text-align:center;
+}
+
+/**************** Footer styles ****************/
+
+#footer{
+clear:both;
+width:958px;
+padding:5px 0;
+margin:0 1px;
+font-size:0.9em;
+color:#f0f0f0;
+background:#467aa7;
+}
+
+#footer p{padding:0; margin:0; text-align:center;}
+#footer a{color:#f0f0f0; background-color:inherit; font-weight:bold;}
+#footer a:hover{color:#ffffff; background-color:inherit; text-decoration: underline;}
+
+/**************** Misc classes and styles ****************/
+
+.splitcontentleft{float:left; width:48%;}
+.splitcontentright{float:right; width:48%;}
+.clear{clear:both;}
+.small{font-size:0.8em;}
+.hide{display:none;}
+.textcenter{text-align:center;}
+.textright{text-align:right;}
+.important{color:#f02025; background-color:inherit; font-weight:bold;}
+
+.box{
+margin:0 0 20px 0;
+padding:10px;
+border:1px solid #c0c0c0;
+background-color:#fafbfc;
+color:#505050;
+line-height:1.5em;
 }
 
 #flash_notice, #flash_error {
@@ -109,3 +320,125 @@ text-align:left;
 .expired {
 color: red;
 }
+.container_24{
+margin-left: auto;
+margin-right: auto;
+margin-top: 160px;
+margin-top: 160px;
+width: 960px
+}
+.container_24 h4{
+text-align:left;
+font-size: 15px;
+margin: 0 auto;
+padding:10px;
+background: none;
+color: #ffffff;
+background: none repeat scroll 0 0 #467AA7;
+width: 400px;
+}
+
+#login-form{
+background: url('../images/login.png') no-repeat scroll left top #FFFFFF;
+width: 380px;
+padding: 20px;
+margin: 0 auto;
+
+}
+#login-form div.form{
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	clear: both;
+	
+}
+#login-form div.form div.fields{
+margin: 0;
+padding: 0;
+clear:both;
+overflow: hidden;
+}
+
+#login-form div.form div.fields div.field{
+margin: 0;
+padding: 0 0 10px;
+clear:both;
+overflow: hidden;
+}
+#login-form div.form div.fields div.field div.label{
+float: left;
+margin: 0 10px 0 0;
+padding: 5px 0 0 5px;
+text-align: right;
+width: 173px;
+
+}
+
+#login-form div.form div.fields div.field div.label label{
+color: #000;
+font-weight: bold;
+
+}
+
+#login-form div.form div.fields div.field div.input{
+float: left;
+margin: 0;
+padding: 0;
+
+}
+#login-form div.form div.fields div.field div.input input{
+color:#000;
+border:1px solid #C8C8C8;
+background: none repeat scroll 0 0 #FFFFFF;
+padding: 5px 5px 4px;
+width:180px;
+}
+#login-form div.form div.fields div.field div.checkbox{
+margin: 0 0 0 184px;
+padding: 0;
+text-align: left;
+}
+
+#login-form div.form div.fields div.button{
+border-top: 1px solid #DDDDDD;
+clear: both;
+margin: 0;
+padding: 10px 0 0;
+text-align: right;
+overflow: hidden;
+}
+#login-form div.form div.fields div.button input.ui-button{
+background: none repeat scroll 0 0 #F5F5F5;
+color: #565656;
+font-weight: bold;
+font-family: Verdana,Helvetica,Sans-Serif;
+font-size: 1em;
+cursor: pointer;
+display: inline-block;
+padding: 0.4em 1em;
+overflow: visible;
+position: relative;
+text-decoration: none;
+text-align: center;
+border: 1px solid #ccc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

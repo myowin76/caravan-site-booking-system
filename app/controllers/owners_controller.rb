@@ -1,4 +1,6 @@
 class OwnersController < ApplicationController
+	before_filter :login_required
+	layout 'admin'
   def index
     @owners = Owner.all
   end

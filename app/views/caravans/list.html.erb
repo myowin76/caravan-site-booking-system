@@ -1,0 +1,31 @@
+<% title "Caravan List" %>
+
+<table>
+  <tr>
+	<th>ID</th>
+	<th>Pitch No</th>
+    <th>Owner</th>
+    <th>Type </th>
+    <th>Build Date</th>
+    <th>Price</th>
+    <th>Status</th>
+    
+  </tr>
+  <% for caravan in @caravans %>
+    <tr>
+      <td><%=h caravan.id %></td>
+      <td><%=h caravan.pitch_no %></td>
+      <td><%=h caravan.owner.fullname %></td>
+      <td><%=h caravan.caravan_type.name %></td>
+      <td><%=h caravan.build_date %></td>
+      <td><%=h caravan.price %></td>
+      <td><%=h caravan.status %></td>
+      
+      <td><%= link_to "Show", caravan %></td>
+      <td><%= link_to "Edit", edit_caravan_path(caravan) %></td>
+      <td><%= link_to "Destroy", caravan, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "Add Caravan", new_caravan_path %></p>

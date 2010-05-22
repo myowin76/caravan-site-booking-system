@@ -3,18 +3,26 @@
 <table>
 	<tr>
 		<th>Pitch No</th>
-		<% Date.today.cweek.upto (Date.today.cweek+10) do |n|%>
-		<th>Week <%= n %> </th>
+		
+		<% (0..10).each do |i|
+			to_add_days = i * 7
+			added_date = Date.today + to_add_days.days %>
+			<th style="font-size: 9px;">week <%= added_date.cweek %><br> from <%= week_commencing_date = added_date.beginning_of_week %></th>
 		<% end %>
+ 
+		             
 	</tr>
+	Customer ID = <%= @customer_id.to_s%>
+	
 	
 	<% for caravan in @caravans %>
 		
 		<tr>
-			<td><%=h caravan.pitch_no %><br/><%=h caravan.caravan_type.name %></td>
+			<td><%=h caravan.pitch_no %><br/><%=h caravan.caravan_type.name %><%=  caravan.caravan_customers.size %></td>
 			<% Date.today.cweek.upto(Date.today.cweek+10) do |week_no|%>
-				<% if !caravan.caravan_customers.nil? %>
-				<td><%= link_to "Avail", new_caravan_caravan_customer_path(caravan, :week_no => week_no)  %></td>
+			
+				<% if caravan.caravan_customers.size <  1 %>
+				<td><%= link_to "Avail", new_caravan_caravan_customer_path(caravan, :week_no => week_no, :customer_id => @customer_id)  %></td>
 				<% else %>
 				<td><%= link_to caravan.caravan_customers, new_caravan_caravan_customer_path(caravan, :week_no => week_no)  %></td>
 				<% end %>

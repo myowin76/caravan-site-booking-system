@@ -1,0 +1,24 @@
+<% title "Caravan Customers Facility" %>
+
+<p>
+  <strong>Caravan Customer:</strong>
+  <%=h @caravan_customers_facility.caravan_customer_id %>
+</p>
+<p>
+  <strong>Facility:</strong>
+  <%=h @caravan_customers_facility.facility_id %>
+</p>
+<p>
+  <strong>Qty:</strong>
+  <%=h @caravan_customers_facility.qty %>
+</p>
+<p>
+  <strong>Unit:</strong>
+  <%=h @caravan_customers_facility.unit %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_caravan_customers_facility_path(@caravan_customers_facility) %> |
+  <%= link_to "Destroy", @caravan_customers_facility, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", caravan_customers_facilities_path %>
+</p>

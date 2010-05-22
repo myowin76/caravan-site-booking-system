@@ -1,4 +1,8 @@
 class FacilitiesController < ApplicationController
+
+  before_filter :login_required
+  layout 'admin'
+  
   def index
     @facilities = Facility.all
   end

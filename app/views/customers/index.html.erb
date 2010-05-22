@@ -23,10 +23,9 @@
       <td><%=h customer.address2 %></td>
       <td><%=h customer.phone %></td>
       <td><%=h customer.email %></td>
-	  <%#= hidden_field :customer_id, :value => customer.id %>
-      <td><%= link_to "Show", customer %></td>
+	  <td><%= link_to "Show", customer %></td>
       <td><%= link_to "Edit", edit_customer_path(customer) %></td>
-	  <td><%= button_to "Reserve", caravans_path, :method => 'get', :id => customer.id %></td>
+	  <td><%= link_to "Reserve", caravans_path(:customer_id => customer.id)  %></td>
       <td><%= link_to "Destroy", customer, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>

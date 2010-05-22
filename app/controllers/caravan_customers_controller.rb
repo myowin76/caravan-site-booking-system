@@ -1,11 +1,17 @@
 class CaravanCustomersController < ApplicationController
+#skip_before_filter :user_login_required, :only => [:index, :new]
+	before_filter :login_required
+	layout 'admin'
+
   def index
-	#@customer = Customer.find(params[:id])
+	@customer = Customer.find(params[:customer_id])
 	@caravan = Caravan.find(params[:caravan_id])
     @caravan_customers = @caravan.caravan_customers.all
 	
 	
   end
+  
+  
   
   
   
@@ -16,7 +22,7 @@ class CaravanCustomersController < ApplicationController
   end
   
   def new
-	#@customer = Customer.find(params[:customer_id])
+	@customer = Customer.find(params[:customer_id])
 	@caravan = Caravan.find(params[:caravan_id])
 	@facilities = Facility.all
     @caravan_customer = @caravan.caravan_customers.new
@@ -25,10 +31,12 @@ class CaravanCustomersController < ApplicationController
   
   def create
 	@caravan = Caravan.find(params[:caravan_id])
+	#@caravan_customer.customer = params[:customer][:id]
     @caravan_customer = @caravan.caravan_customers.build(params[:caravan_customer])
-	
+	#@caravan_customer.customer_id = @customer_id
 	#checked_c_facilities = get_c_facilities_from(params[:caravan_facilities_list])
 	#removed_c_facilities = @facilities - checked_c_facilities
+	
 	
 	
     if @caravan_customer.save

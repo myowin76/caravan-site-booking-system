@@ -1,7 +1,15 @@
 class CustomersController < ApplicationController
+
+	before_filter :login_required
+	layout 'admin'
+	
   def index
     #@customers = Customer.all
 	@customers = Customer.search(params[:search])
+	
+  end
+  
+  def arrive_today
 	
   end
 

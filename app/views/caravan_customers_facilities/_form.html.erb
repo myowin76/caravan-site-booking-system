@@ -1,0 +1,20 @@
+<% form_for @caravan_customers_facility do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :caravan_customer_id %><br />
+    <%= f.text_field :caravan_customer_id %>
+  </p>
+  <p>
+    <%= f.label :facility_id %><br />
+    <%= f.text_field :facility_id %>
+  </p>
+  <p>
+    <%= f.label :qty %><br />
+    <%= f.text_field :qty %>
+  </p>
+  <p>
+    <%= f.label :unit %><br />
+    <%= f.text_field :unit %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

@@ -1,16 +1,27 @@
 class CaravansController < ApplicationController
-	def index
 	
+	before_filter :login_required
+	layout 'admin'
+	def index
+		@customer_id = params[:customer_id]
 		@caravans = Caravan.all
-		if params[:customer]
-			@customers = Customer.new(params[:customer])
+		
+		if @customer_id
+			@customers = Customer.find(@customer_id)
 		end
+		
+	end
+	
+	def list
+		@caravans = Caravan.all
+		
 	end
   
 
   
   def show
     @caravan = Caravan.find(params[:id])
+	@owner = @caravan.owner.fullname
   end
   
   def new
@@ -19,6 +30,7 @@ class CaravansController < ApplicationController
   
   def create
     @caravan = Caravan.new(params[:caravan])
+	
     if @caravan.save
       flash[:notice] = "Successfully created caravan."
       redirect_to @caravan
